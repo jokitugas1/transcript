@@ -1,0 +1,23 @@
+{
+  "name": "tugas2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "soal1": "tsx src/soal1.ts",
+    "soal2": "tsx src/soal2.ts",
+    "soal3": "tsx src/soal3.ts",
+    "semua": "npm run -s soal1 && npm run -s soal2 && npm run -s soal3",
+    "laporan": "tsx scripts/buat-laporan.ts",
+    "cek": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "docx": "^9.15.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
