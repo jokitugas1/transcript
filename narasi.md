@@ -2,7 +2,7 @@
 
 Perkiraan durasi: ±12–13 menit (bicara santai).
 Teks dalam **[kurung tebal]** adalah petunjuk tampilan layar, tidak perlu dibaca.
-Angka **58** = 2 digit akhir NIM contoh. Ganti dengan 2 digit akhir NIM kamu.
+Angka **35** = 2 digit akhir NIM (057640335).
 
 ---
 
@@ -12,7 +12,7 @@ Angka **58** = 2 digit akhir NIM contoh. Ganti dengan 2 digit akhir NIM kamu.
 
 > Assalamualaikum warahmatullahi wabarakatuh, selamat pagi/siang/malam Bapak/Ibu tutor.
 >
-> Perkenalkan, nama saya ........, NIM ........, dari Program Studi Sistem Informasi, Universitas Terbuka.
+> Perkenalkan, nama saya ........, NIM 057640335, dari Program Studi Sistem Informasi, Universitas Terbuka.
 >
 > Pada video ini saya akan menjelaskan Tugas Praktik 3 mata kuliah Struktur Data. Tugasnya ada dua: membuat program pencarian angka pada graf dengan algoritma **Depth-First Search** atau DFS, dan dengan algoritma **Breadth-First Search** atau BFS, menggunakan bahasa Java.
 >
@@ -26,13 +26,13 @@ Angka **58** = 2 digit akhir NIM contoh. Ganti dengan 2 digit akhir NIM kamu.
 
 > Pertama, ini graf yang saya gunakan. Grafnya tidak berarah dan terdiri dari 8 node, yaitu a1 sampai a8.
 >
-> Setiap node punya nilai, yang saya tulis di dalam kurung. a1 bernilai 12, a2 bernilai 7, a3 bernilai 25, a4 bernilai 9, a5 bernilai 33, a6 bernilai 58, a7 bernilai 41, dan a8 bernilai 16.
+> Setiap node punya nilai, yang saya tulis di dalam kurung. a1 bernilai 12, a2 bernilai 7, a3 bernilai 25, a4 bernilai 9, a5 bernilai 33, a6 bernilai 35, a7 bernilai 41, dan a8 bernilai 16.
 >
-> Angka di garis adalah nilai hubungan atau bobot antar node. Sesuai ketentuan soal, saya memasukkan 2 digit terakhir NIM saya, yaitu **58**, ke dalam graf. Angka 58 saya pakai sebagai nilai node a6, dan sebagai bobot hubungan a1 ke a2 serta a3 ke a6.
+> Angka di garis adalah nilai hubungan atau bobot antar node. Sesuai ketentuan soal, saya memasukkan 2 digit terakhir NIM saya, yaitu **35**, ke dalam graf. Angka 35 saya pakai sebagai nilai node a6, dan sebagai bobot hubungan a1 ke a2 serta a3 ke a6.
 >
 > Hubungannya begini: a1 terhubung ke a2 dan a3. a2 terhubung ke a4 dan a5. a3 terhubung ke a6 dan a7. Lalu a5 dan a6 sama-sama terhubung ke a8. Karena ada hubungan lewat a8 ini, graf saya punya **siklus** atau putaran, jadi program harus mencatat node mana yang sudah dikunjungi supaya tidak berputar terus.
 >
-> Angka yang akan dicari adalah **n = 58**, dan pencarian selalu dimulai dari node a1.
+> Angka yang akan dicari adalah **n = 35**, dan pencarian selalu dimulai dari node a1.
 
 ---
 
@@ -76,14 +76,14 @@ Angka **58** = 2 digit akhir NIM contoh. Ganti dengan 2 digit akhir NIM kamu.
 
 > Sekarang saya jalankan programnya. Ini output DFS-nya, saya jelaskan langkah demi langkah:
 >
-> - **Langkah 1:** a1 di-pop dan dicek. Nilainya 12, bukan 58. Tetangganya, a2 dan a3, di-push. Sekarang a2 ada di atas stack.
-> - **Langkah 2:** a2 di-pop. Nilainya 7, bukan 58. Tetangganya, a4 dan a5, di-push. Stack sekarang berisi a4, a5, a3.
-> - **Langkah 3:** a4 di-pop. Nilainya 9, bukan 58. a4 tidak punya tetangga baru, jadi ini buntu. DFS mundur, dan berikutnya yang diambil adalah a5.
-> - **Langkah 4:** a5 di-pop. Nilainya 33, bukan 58. Tetangganya, a8, di-push.
-> - **Langkah 5:** a8 di-pop. Nilainya 16, bukan 58. Tetangganya, a6, di-push.
-> - **Langkah 6:** a6 di-pop. Nilainya 58, **sama dengan yang dicari**. Pencarian selesai.
+> - **Langkah 1:** a1 di-pop dan dicek. Nilainya 12, bukan 35. Tetangganya, a2 dan a3, di-push. Sekarang a2 ada di atas stack.
+> - **Langkah 2:** a2 di-pop. Nilainya 7, bukan 35. Tetangganya, a4 dan a5, di-push. Stack sekarang berisi a4, a5, a3.
+> - **Langkah 3:** a4 di-pop. Nilainya 9, bukan 35. a4 tidak punya tetangga baru, jadi ini buntu. DFS mundur, dan berikutnya yang diambil adalah a5.
+> - **Langkah 4:** a5 di-pop. Nilainya 33, bukan 35. Tetangganya, a8, di-push.
+> - **Langkah 5:** a8 di-pop. Nilainya 16, bukan 35. Tetangganya, a6, di-push.
+> - **Langkah 6:** a6 di-pop. Nilainya 35, **sama dengan yang dicari**. Pencarian selesai.
 >
-> Jadi DFS menemukan angka 58 di node a6 setelah mengecek 6 node, dengan urutan a1, a2, a4, a5, a8, a6. Jalur yang ditempuh dari a1 adalah a1, a2, a5, a8, lalu a6.
+> Jadi DFS menemukan angka 35 di node a6 setelah mengecek 6 node, dengan urutan a1, a2, a4, a5, a8, a6. Jalur yang ditempuh dari a1 adalah a1, a2, a5, a8, lalu a6.
 >
 > Terlihat DFS langsung masuk dalam ke cabang kiri dan baru sampai ke a6 lewat a8. Cabang a3 bahkan tidak sempat diperiksa.
 
@@ -105,14 +105,14 @@ Angka **58** = 2 digit akhir NIM contoh. Ganti dengan 2 digit akhir NIM kamu.
 
 > Ini output BFS-nya:
 >
-> - **Langkah 1, level 0:** a1 diambil. Nilainya 12, bukan 58. Tetangganya, a2 dan a3, masuk antrian.
-> - **Langkah 2, level 1:** a2 diambil. Nilainya 7, bukan 58. a4 dan a5 masuk ke belakang antrian. Queue sekarang a3, a4, a5.
-> - **Langkah 3, level 1:** a3 diambil. Nilainya 25, bukan 58. a6 dan a7 masuk antrian. Queue sekarang a4, a5, a6, a7.
-> - **Langkah 4, level 2:** a4 diambil. Nilainya 9, bukan 58. Tidak ada tetangga baru.
-> - **Langkah 5, level 2:** a5 diambil. Nilainya 33, bukan 58. a8 masuk antrian.
-> - **Langkah 6, level 2:** a6 diambil. Nilainya 58, **sama dengan yang dicari**. Pencarian selesai.
+> - **Langkah 1, level 0:** a1 diambil. Nilainya 12, bukan 35. Tetangganya, a2 dan a3, masuk antrian.
+> - **Langkah 2, level 1:** a2 diambil. Nilainya 7, bukan 35. a4 dan a5 masuk ke belakang antrian. Queue sekarang a3, a4, a5.
+> - **Langkah 3, level 1:** a3 diambil. Nilainya 25, bukan 35. a6 dan a7 masuk antrian. Queue sekarang a4, a5, a6, a7.
+> - **Langkah 4, level 2:** a4 diambil. Nilainya 9, bukan 35. Tidak ada tetangga baru.
+> - **Langkah 5, level 2:** a5 diambil. Nilainya 33, bukan 35. a8 masuk antrian.
+> - **Langkah 6, level 2:** a6 diambil. Nilainya 35, **sama dengan yang dicari**. Pencarian selesai.
 >
-> BFS juga menemukan angka 58 di node a6 setelah 6 langkah, tapi urutannya berbeda: a1, a2, a3, a4, a5, a6. Jalurnya juga lebih pendek, yaitu a1, a3, a6, hanya 2 langkah dari a1.
+> BFS juga menemukan angka 35 di node a6 setelah 6 langkah, tapi urutannya berbeda: a1, a2, a3, a4, a5, a6. Jalurnya juga lebih pendek, yaitu a1, a3, a6, hanya 2 langkah dari a1.
 
 ---
 
@@ -137,7 +137,7 @@ Angka **58** = 2 digit akhir NIM contoh. Ganti dengan 2 digit akhir NIM kamu.
 
 **[Kamera wajah]**
 
-> Kesimpulannya, saya sudah membuat program Java untuk mencari angka pada graf 8 node dengan algoritma DFS dan BFS. Kedua algoritma berhasil menemukan angka 58 di node a6, tapi dengan urutan penelusuran dan jalur yang berbeda.
+> Kesimpulannya, saya sudah membuat program Java untuk mencari angka pada graf 8 node dengan algoritma DFS dan BFS. Kedua algoritma berhasil menemukan angka 35 di node a6, tapi dengan urutan penelusuran dan jalur yang berbeda.
 >
 > Sekian penjelasan dari saya. Mohon maaf jika ada kekurangan. Terima kasih atas perhatiannya.
 >
@@ -150,4 +150,3 @@ Angka **58** = 2 digit akhir NIM contoh. Ganti dengan 2 digit akhir NIM kamu.
 - Pastikan wajah terlihat (pakai webcam overlay di pojok layar, misalnya dengan OBS).
 - Perbesar font editor dan terminal supaya kode terbaca di video.
 - Jalankan program sekali sebelum merekam untuk memastikan tidak ada error.
-- Kalau 2 digit NIM kamu bukan 58, ganti semua angka 58 di naskah ini. Urutan langkahnya tetap sama, kecuali angka NIM kamu sama dengan nilai node lain (12, 7, 25, 9, 33, 41, 16).
